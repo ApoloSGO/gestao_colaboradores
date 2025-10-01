@@ -1,0 +1,9 @@
+<h2>Seus Documentos</h2>
+<a href="{% url 'upload' %}">Enviar Documento</a>
+<ul>
+  {% for doc in documentos %}
+    <li>{{ doc.titulo }} - <a href="{{ doc.arquivo.url }}">Download</a></li>
+  {% empty %}
+    <li>Nenhum documento</li>
+  {% endfor %}
+</ul>
